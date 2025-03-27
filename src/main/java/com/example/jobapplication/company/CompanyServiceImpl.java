@@ -3,6 +3,7 @@ package com.example.jobapplication.company;
 import com.example.jobapplication.job.Job;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.CoderMalfunctionError;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +19,12 @@ public class CompanyServiceImpl implements CompanyService{
     @Override
     public List<Company> getAllCompanies() {
         return companyRepo.findAll();
+    }
+
+    @Override
+    public Company getCompanyById(Long id) {
+        return companyRepo.findById(id).orElse(null);
+
     }
 
     @Override
