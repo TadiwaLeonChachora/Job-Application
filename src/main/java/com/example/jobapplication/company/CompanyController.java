@@ -65,5 +65,4 @@ public class CompanyController {
             return new ResponseEntity<>("Company not found", HttpStatus.NOT_FOUND);
         }
     }
-
 }
