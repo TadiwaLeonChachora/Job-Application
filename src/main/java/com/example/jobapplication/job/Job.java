@@ -2,6 +2,7 @@ package com.example.jobapplication.job;
 
 import com.example.jobapplication.company.Company;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 
 @Entity

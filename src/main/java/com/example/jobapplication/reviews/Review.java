@@ -3,6 +3,9 @@ package com.example.jobapplication.reviews;
 import com.example.jobapplication.company.Company;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Review {
@@ -14,7 +17,7 @@ public class Review {
     private String title;
     @NotBlank(message = "Review description is required")
     private String description;
-    @DecimalMin(vakue = "0.0", message = "Rating must be at least 0.0")
+    @DecimalMin(value = "0.0", message = "Rating must be at least 0.0")
     @DecimalMax(value = "5.0", message = "Rating must not exceed 5.0")
     private double rating;
 

@@ -1,5 +1,6 @@
 package com.example.jobapplication.job;
 
+import jakarta.validation.Valid;
 import org.apache.coyote.http2.Http2OutputBuffer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
