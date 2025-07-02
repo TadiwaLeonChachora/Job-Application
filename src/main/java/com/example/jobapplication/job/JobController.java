@@ -13,7 +13,6 @@ import java.util.List;
 @RequestMapping("/jobs")
 public class JobController {
 
-
     private final JobService jobService;
 
     public JobController(JobService jobService){
@@ -26,7 +25,7 @@ public class JobController {
     }
 
     @PostMapping()
-    public  ResponseEntity<String> createJob(@RequestBody Job job){
+    public  ResponseEntity<String> createJob(@Valid @RequestBody Job job){
         jobService.createJob(job);
         return new ResponseEntity<>("Job has been created", HttpStatus.CREATED);
     }
@@ -55,7 +54,7 @@ public class JobController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateJob(@PathVariable Long id,@RequestBody Job updatedJob){
+    public ResponseEntity<String> updateJob(@PathVariable Long id,@Valid @RequestBody Job updatedJob){
         boolean updated = jobService.updateJob(id, updatedJob);
 
         if(updated){

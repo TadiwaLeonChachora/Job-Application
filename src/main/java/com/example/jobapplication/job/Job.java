@@ -3,6 +3,7 @@ package com.example.jobapplication.job;
 import com.example.jobapplication.company.Company;
 import jakarta.persistence.*;
 
+
 @Entity
 //@Table(name ="job_table")
 public class Job {
@@ -10,14 +11,21 @@ public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Job title is required")
     private String title;
+    @NotBlank(message = "Job description is required")
     private String description;
     private String minSalary;
     private String maxSalary;
+    @NotBlank(message = "Location is required")
     private String location;
     @ManyToOne
+    @NotBlank(message = "Company is required")
     private Company company;
 
+
+    public Job() {
+    }
 
     public Job(Long id, String title, String description, String minSalary, String maxSalary, String location, Company company) {
         this.id = id;
@@ -29,10 +37,8 @@ public class Job {
         this.company = company;
     }
 
-    public Job() {
 
-    }
-
+    // getters and setters
     public Long getId() {
         return id;
     }

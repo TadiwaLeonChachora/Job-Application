@@ -10,8 +10,12 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Review title is required")
     private String title;
+    @NotBlank(message = "Review description is required")
     private String description;
+    @DecimalMin(vakue = "0.0", message = "Rating must be at least 0.0")
+    @DecimalMax(value = "5.0", message = "Rating must not exceed 5.0")
     private double rating;
 
     @JsonIgnore
@@ -19,7 +23,6 @@ public class Review {
     private Company company;
 
     // constructors
-
     public Review() {
     }
 
@@ -32,7 +35,6 @@ public class Review {
     }
 
     // setters and getters
-
 
     public Long getId() {
         return id;

@@ -13,7 +13,10 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Company name is required")
     private String name;
+
+    @NotBlank(message = "Company description is required")
     private String description;
     @JsonIgnore
     @OneToMany(mappedBy = "company")

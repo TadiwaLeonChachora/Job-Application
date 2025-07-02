@@ -3,7 +3,6 @@ package com.example.jobapplication.company;
 import com.example.jobapplication.job.Job;
 import org.springframework.stereotype.Service;
 
-import java.nio.charset.CoderMalfunctionError;
 import java.util.List;
 import java.util.Optional;
 
